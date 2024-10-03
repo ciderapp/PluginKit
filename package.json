@@ -1,6 +1,6 @@
 {
   "name": "@ciderapp/pluginkit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "repository": "ciderapp/pluginkit",
   "license": "MIT",
@@ -12,7 +12,7 @@
       "import": "./build/index.mjs"
     },
     "./vue/*.vue": {
-      "import": "./build/api/*.vue"
+      "import": "./build/vue/*.vue"
     },
     "./types": {
       "import": "./src/api/ciderapi-types/*.ts"
