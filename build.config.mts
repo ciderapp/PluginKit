@@ -5,14 +5,20 @@ export default defineBuildConfig({
   entries: [
     // default
     "./src/index",
-    // mkdist builder transpiles file-to-file keeping original sources structure
-    {
-      builder: "mkdist",
-      format: "esm",
-      input: "./src/api/",
-      outDir: "./build/api",
+        {
+      builder: "copy",
+      input: "./src/vue/",
+      outDir: "./build/vue",
       // loaders: ['vue'],
     },
+    // mkdist builder transpiles file-to-file keeping original sources structure
+    // {
+    //   builder: "mkdist",
+    //   format: "esm",
+    //   input: "./src/api/",
+    //   outDir: "./build/api",
+    //   // loaders: ['vue'],
+    // },
   ],
   externals: ['vue', 'lodash'],
   // Change outDir, default is 'dist'

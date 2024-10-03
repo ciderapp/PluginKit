@@ -11,11 +11,7 @@
       "types": "./build/index.d.ts",
       "import": "./build/index.mjs"
     },
-    "./api/*": {
-      "types": "./build/api/*.d.ts",
-      "import": "./build/api/*.mjs"
-    },
-    "./api/*.vue": {
+    "./vue/*.vue": {
       "import": "./build/api/*.vue"
     },
     "./types": {

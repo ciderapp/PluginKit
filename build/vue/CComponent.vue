@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { ComponentNames } from "./ComponentNames.ts";
+import type { ComponentNames } from "../";
 import { ref, onMounted, onUnmounted, watch, defineProps } from "vue";
 const ElRef = ref<HTMLElement>();
 let cc: any;
