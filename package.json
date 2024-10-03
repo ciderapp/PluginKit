@@ -21,7 +21,7 @@
   "module": "./build/index.mjs",
   "types": "./build/index.d.ts",
   "files": [
-    "dist"
+    "build"
   ],
   "scripts": {
     "build": "unbuild",
