@@ -1,0 +1,58 @@
+{
+  "name": "@ciderapp/pluginkit",
+  "version": "0.0.1",
+  "description": "",
+  "repository": "ciderapp/pluginkit",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.mjs"
+    },
+    "./api/*": {
+      "types": "./build/api/*.d.ts",
+      "import": "./build/api/*.mjs"
+    },
+    "./api/*.vue": {
+      "import": "./build/api/*.vue"
+    },
+    "./types": {
+      "import": "./src/api/ciderapi-types/*.ts"
+    }
+  },
+  "module": "./build/index.mjs",
+  "types": "./build/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "vitest dev",
+    "lint": "eslint . && prettier -c .",
+    "lint:fix": "automd && eslint . --fix && prettier -w .",
+    "prepack": "pnpm build",
+    "play": "jiti playground",
+    "release": "pnpm test && changelogen --release && npm publish && git push --follow-tags",
+    "test": "pnpm lint && pnpm test:types && vitest run --coverage",
+    "test:types": "tsc --noEmit --skipLibCheck"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.9",
+    "@types/node": "^22.1.0",
+    "@vitest/coverage-v8": "^2.0.5",
+    "automd": "^0.3.8",
+    "changelogen": "^0.5.5",
+    "eslint": "^9.8.0",
+    "eslint-config-unjs": "^0.3.2",
+    "jiti": "^2.0.0-beta.3",
+    "lodash": "^4.17.21",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "unbuild": "^3.0.0-rc.7",
+    "vitest": "^2.0.5",
+    "vue": "^3.5.10"
+  },
+  "packageManager": "pnpm@9.7.0"
+}
