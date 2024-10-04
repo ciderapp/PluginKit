@@ -7,13 +7,14 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@types/musickit':
+        specifier: ciderapp/musickit-types
+        version: https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df
     devDependencies:
       '@types/lodash':
         specifier: ^4.17.9
         version: 4.17.9
-      '@types/musickit':
-        specifier: ciderapp/musickit-types
-        version: https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df
       '@types/node':
         specifier: ^22.1.0
         version: 22.7.4

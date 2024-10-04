@@ -34,8 +34,10 @@
     "test": "pnpm lint && pnpm test:types && vitest run --coverage",
     "test:types": "tsc --noEmit --skipLibCheck"
   },
+  "dependencies": {
+    "@types/musickit": "ciderapp/musickit-types"
+  },
   "devDependencies": {
-    "@types/musickit": "ciderapp/musickit-types",
     "@types/lodash": "^4.17.9",
     "@types/node": "^22.1.0",
     "@vitest/coverage-v8": "^2.0.5",
