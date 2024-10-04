@@ -204,7 +204,7 @@ declare function createModal(opts: CreateModalOptions): {
  *
  * Learn more at https://developer.apple.com/documentation/musickitjs
  */
-declare function useMusicKit(): any;
+declare function useMusicKit(): MusicKit.MusicKitInstance;
 
 declare function useRouter(): any;
 declare function getURLParam(name: string): string | null;

@@ -1,8 +1,8 @@
 /**
  * MusicKit JS API
- * 
+ *
  * Learn more at https://developer.apple.com/documentation/musickitjs
  */
 export function useMusicKit() {
-    return window.MusicKit.getInstance();
+    return window.MusicKit.getInstance() as MusicKit.MusicKitInstance;
 }
