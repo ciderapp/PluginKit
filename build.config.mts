@@ -5,7 +5,14 @@ export default defineBuildConfig({
   entries: [
     // default
     "./src/index",
-        {
+    "./src/mDNS",
+    {
+      builder: "copy",
+      input: "./src/api/ciderapi-types/",
+      outDir: "./build/api/ciderapi-types/",
+      // loaders: ['vue'],
+    },
+    {
       builder: "copy",
       input: "./src/vue/",
       outDir: "./build/vue",

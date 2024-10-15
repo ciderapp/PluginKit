@@ -1,4 +1,10 @@
 import { definePluginContext } from "../build/index.mjs";
+import {mDNSDiscover} from '../build/mDNS'
+
+const services = await mDNSDiscover({
+    tcp_service: "cider._tcp.local",
+    timeout: 5000
+})
 
 export default definePluginContext({
     author: "Cider",
