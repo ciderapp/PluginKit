@@ -11,6 +11,10 @@
       "types": "./build/index.d.ts",
       "import": "./build/index.mjs"
     },
+    "./mDNS": {
+      "types": "./build/mDNS.d.ts",
+      "import": "./build/mDNS.mjs"
+    },
     "./vue/*.vue": {
       "import": "./build/vue/*.vue"
     },
