@@ -13,6 +13,10 @@ declare namespace __PLUGINSYS__ {
             removeMenuItem(item: import("../MenuEntry").MenuItem): void
             items: import("../MenuEntry").MenuItem[]
         },
+        LyricProviders: {
+            registerLyricProvider(opts: import('../LyricProvider').RegisterLyricProviderProps): void
+            providers: import('../LyricProvider').RegisterLyricProviderProps[]
+        },
         ImmersiveMenu: {
             addMenuItem(item: import("../MenuEntry").MenuItem): import("../MenuEntry").MenuItem
             removeMenuItem(item: import("../MenuEntry").MenuItem): void
