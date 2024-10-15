@@ -210,4 +210,17 @@ declare function useRouter(): any;
 declare function getURLParam(name: string): string | null;
 declare function useCider(): typeof CiderApp;
 
-export { type ComponentNames, type CustomButtonOptions, type CustomImmersiveLayout, ExternalMessages, type MenuItem, type PluginAPI, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
+interface CustomLyricViewProps {
+    offsetY?: number;
+    noSingLyrics?: boolean;
+    simpleLyricStyle?: boolean;
+    isImmersive?: boolean;
+    zoomScale?: number;
+    showNoLyricsFoundText?: boolean;
+    elStyle?: {
+        [key: string]: string;
+    };
+    type?: 'lyrics' | 'single-line' | 'basic';
+}
+
+export { type ComponentNames, type CustomButtonOptions, type CustomImmersiveLayout, type CustomLyricViewProps, ExternalMessages, type MenuItem, type PluginAPI, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };

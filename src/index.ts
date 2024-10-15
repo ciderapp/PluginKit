@@ -11,3 +11,5 @@ export * from './api/Modal'
 export * from './api/MusicKit'
 export * from './api/PluginAPI'
 export * from './api/Std'
+export * from './api/CustomLyricView';
+export * from './api/LyricProvider';

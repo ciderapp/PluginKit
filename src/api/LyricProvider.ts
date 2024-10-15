@@ -32,9 +32,9 @@ export type ProviderRequestProps = {
  * @returns Removal function
  */
 export function registerLyricProvider(opts: RegisterLyricProviderProps) {
-    __PLUGINSYS__.Components.LyricProviders.registerLyricProvider(opts);
+    __PLUGINSYS__.Components.Lyrics.registerLyricProvider(opts);
     return () => {
-        __PLUGINSYS__.Components.LyricProviders.providers = __PLUGINSYS__.Components.LyricProviders.providers.filter(p => p !== opts);
+        __PLUGINSYS__.Components.Lyrics.providers = __PLUGINSYS__.Components.Lyrics.providers.filter(p => p !== opts);
     }
 }
 
