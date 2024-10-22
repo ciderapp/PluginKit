@@ -87,7 +87,7 @@ type CustomButtonOptions = {
 };
 declare function addCustomButton(opts: CustomButtonOptions): void;
 
-type PAPIEvents = 'app:ready' | 'shell:layout_type_changed' | 'immersive:opened' | 'immersive:closed' | 'miniplayer:opened' | 'miniplayer:closed' | 'browser:page_changed';
+type PAPIEvents = 'app:ready' | 'shell:layout_type_changed' | 'shell:vue:onMounted' | 'shell:vue:onUpdated' | 'shell:vue:onBeforeUpdate' | 'immersive:opened' | 'immersive:closed' | 'miniplayer:opened' | 'miniplayer:closed' | 'browser:page_changed' | 'music:rating_set';
 
 /**
  * Subscribe to a PAPI event
@@ -211,16 +211,122 @@ declare function getURLParam(name: string): string | null;
 declare function useCider(): typeof CiderApp;
 
 interface CustomLyricViewProps {
+    /**
+     * Top offset of the lyrics view.  Used by Immersive to center the lyrics vertically.
+     */
     offsetY?: number;
+    /**
+     * Are sing lyrics disabled?
+     */
     noSingLyrics?: boolean;
-    simpleLyricStyle?: boolean;
+    /**
+     * Is this view in Immersive mode?
+     */
     isImmersive?: boolean;
-    zoomScale?: number;
+    /**
+     * When lyrics are not found, show a message indicating that no lyrics were found.
+     */
     showNoLyricsFoundText?: boolean;
+    /**
+     * Bound to the :style="" attribute of the lyrics view.
+     */
     elStyle?: {
         [key: string]: string;
     };
-    type?: 'lyrics' | 'single-line' | 'basic';
 }
+declare function addLyricView(props: CustomLyricViewProps): void;
 
-export { type ComponentNames, type CustomButtonOptions, type CustomImmersiveLayout, type CustomLyricViewProps, ExternalMessages, type MenuItem, type PluginAPI, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
+type LyricProviders = 'Apple Music' | 'musixmatch' | 'NetEase' | 'Unknown';
+type LyricTiming = 'Line' | 'Word' | 'None';
+type RegisterLyricProviderProps = {
+    /**
+     * The name of the lyric provider
+     */
+    name: string;
+    /**
+     * Does this support translations
+     */
+    supportsTranslations?: boolean;
+    /**
+     * Does this support word-by-word syllable timing?
+     */
+    supportsSingLyrics?: boolean;
+    /**
+     * The provider to register
+     */
+    provider: (props: ProviderRequestProps) => Promise<LyricProviderResult>;
+};
+type ProviderRequestProps = {
+    item: MusicKit.Resource;
+    useSingLyrics?: boolean;
+    useTranslations?: boolean;
+};
+/**
+ * Register a new lyric provider
+ * @param opts
+ * @returns Removal function
+ */
+declare function registerLyricProvider(opts: RegisterLyricProviderProps): () => void;
+interface Lyric {
+    /**
+     * The start time of the lyric in seconds
+     */
+    start: number;
+    /**
+     * The end time of the lyric in seconds
+     */
+    end: number;
+    /**
+     * The text of the lyric
+     */
+    text: string;
+    /**
+     * The translation of the lyric (will show under the lyric)
+     */
+    translation?: string;
+    /**
+     * Each word in the lyric with their own timing (aka "Sing Lyrics")
+     */
+    words: Lyric[];
+    /**
+     * Is this line a duet? (Will show on the left side)
+     */
+    isDuet?: boolean;
+    /**
+     * Is this an empty line?
+     */
+    empty: boolean;
+    /**
+     * Used primarily for Apple Music lyrics only
+     */
+    'ttm-agent'?: string;
+    /**
+     * Used for "role" in Apple Music
+     */
+    songPart?: string;
+    /**
+     * Is this word a background vocal?
+     */
+    isBackground?: boolean;
+    /**
+     * What lyric index this is
+     */
+    index?: number;
+    /**
+     * If this lyric is a credit line
+     */
+    isCredit?: boolean;
+}
+type LyricAgents = {
+    type: 'person' | 'group' | 'other';
+    id: string;
+};
+type LyricWriters = {
+    name: string;
+};
+type LyricProviderResult = {
+    lyrics: Lyric[];
+    type: LyricTiming;
+};
+
+export { type ComponentNames, type CustomButtonOptions, type CustomImmersiveLayout, type CustomLyricViewProps, ExternalMessages, type Lyric, type LyricAgents, type LyricProviderResult, type LyricProviders, type LyricTiming, type LyricWriters, type MenuItem, type PluginAPI, type ProviderRequestProps, type RegisterLyricProviderProps, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addLyricView, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, registerLyricProvider, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };

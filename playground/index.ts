@@ -1,9 +1,13 @@
-import { definePluginContext } from "../build/index.mjs";
+import { definePluginContext, subscribeEvent } from "../build/index.mjs";
 import {mDNSDiscover} from '../build/mDNS'
 
 const services = await mDNSDiscover({
     tcp_service: "cider._tcp.local",
     timeout: 5000
+})
+
+subscribeEvent('music:rating_set', (e: PAPITypes.Music.SetRatingChanged) => {
+    // code
 })
 
 export default definePluginContext({

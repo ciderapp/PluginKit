@@ -165,4 +165,15 @@ function useMusicKit() {
   return window.MusicKit.getInstance();
 }
 
-export { ExternalMessages, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
+function addLyricView(props) {
+  __PLUGINSYS__.Components.Lyrics.addLyricView(props);
+}
+
+function registerLyricProvider(opts) {
+  __PLUGINSYS__.Components.Lyrics.registerLyricProvider(opts);
+  return () => {
+    __PLUGINSYS__.Components.Lyrics.providers = __PLUGINSYS__.Components.Lyrics.providers.filter((p) => p !== opts);
+  };
+}
+
+export { ExternalMessages, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addLyricView, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, registerLyricProvider, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
