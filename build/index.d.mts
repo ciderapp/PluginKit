@@ -38,7 +38,7 @@ type CiderAudio = {
         airplaygainNode: GainNode | null;
         spatialNode: ConvolverNode | null;
         airplayMuteAudioNode: GainNode | null;
-        audioBands: BiquadFilterNode | null;
+        audioBands: BiquadFilterNode[] | null;
         vibrantbassNode: BiquadFilterNode | null;
         llpw: BiquadFilterNode | null;
         recorderNode: AudioWorkletNode | null;
