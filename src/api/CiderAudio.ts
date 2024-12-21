@@ -1,5 +1,6 @@
 type CiderAudioEvents = 'ready'
 type CiderAudio = {
+    store: AudioLabsStore;
     context: AudioContext | null;
     fetchBufferCache: { [key: string]: ArrayBuffer };
     source: MediaElementAudioSourceNode | null;
@@ -8,7 +9,7 @@ type CiderAudio = {
         airplaygainNode: GainNode | null;
         spatialNode: ConvolverNode | null;
         airplayMuteAudioNode: GainNode | null;
-        audioBands: BiquadFilterNode | null;
+        audioBands: BiquadFilterNode[] | null;
         vibrantbassNode: BiquadFilterNode | null;
         llpw: BiquadFilterNode | null;
         recorderNode: AudioWorkletNode | null;
@@ -29,6 +30,38 @@ type CiderAudio = {
     dispatchEvent: (event: CiderAudioEvents, data: any) => void;
     subscribe: (event: CiderAudioEvents, callback: (data: any) => void, opts?: { once: boolean }) => void;
 }
+
+export class SpatialPreset {
+    id: string = "";
+    file: string = "";
+    name: string = "";
+    description: string = "";
+    gainComp: string = "";
+    purchaseDocumentID: string = "";
+}
+
+export class CARPreset {
+    id: string = "";
+    file: string = "";
+    name: string = "";
+    description: string = "";
+}
+
+export class COCPreset {
+    id: string = "";
+    file: string = "";
+    name: string = "";
+    description: string = "";
+    purchaseDocumentID: string = "";
+}
+
+type AudioLabsStore = {
+    spatialPresets: SpatialPreset[];
+    carPresets: CARPreset[];
+    cocPresets: COCPreset[];
+    user_ocprofiles: any[];
+    user_spprofiles: any[];
+};
 
 export function useCiderAudio() {
     // @ts-ignore

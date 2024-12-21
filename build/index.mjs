@@ -55,6 +55,27 @@ function definePluginContext(options) {
   return exports;
 }
 
+class SpatialPreset {
+  id = "";
+  file = "";
+  name = "";
+  description = "";
+  gainComp = "";
+  purchaseDocumentID = "";
+}
+class CARPreset {
+  id = "";
+  file = "";
+  name = "";
+  description = "";
+}
+class COCPreset {
+  id = "";
+  file = "";
+  name = "";
+  description = "";
+  purchaseDocumentID = "";
+}
 function useCiderAudio() {
   return window.CiderAudio;
 }
@@ -165,4 +186,4 @@ function useMusicKit() {
   return window.MusicKit.getInstance();
 }
 
-export { ExternalMessages, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
+export { CARPreset, COCPreset, ExternalMessages, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };

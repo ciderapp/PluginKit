@@ -27,6 +27,7 @@ declare function definePluginContext(options: PluginAPI): {
 
 type CiderAudioEvents = 'ready';
 type CiderAudio = {
+    store: AudioLabsStore;
     context: AudioContext | null;
     fetchBufferCache: {
         [key: string]: ArrayBuffer;
@@ -66,6 +67,34 @@ type CiderAudio = {
     subscribe: (event: CiderAudioEvents, callback: (data: any) => void, opts?: {
         once: boolean;
     }) => void;
+};
+declare class SpatialPreset {
+    id: string;
+    file: string;
+    name: string;
+    description: string;
+    gainComp: string;
+    purchaseDocumentID: string;
+}
+declare class CARPreset {
+    id: string;
+    file: string;
+    name: string;
+    description: string;
+}
+declare class COCPreset {
+    id: string;
+    file: string;
+    name: string;
+    description: string;
+    purchaseDocumentID: string;
+}
+type AudioLabsStore = {
+    spatialPresets: SpatialPreset[];
+    carPresets: CARPreset[];
+    cocPresets: COCPreset[];
+    user_ocprofiles: any[];
+    user_spprofiles: any[];
 };
 declare function useCiderAudio(): CiderAudio;
 
@@ -210,4 +239,4 @@ declare function useRouter(): any;
 declare function getURLParam(name: string): string | null;
 declare function useCider(): typeof CiderApp;
 
-export { type ComponentNames, type CustomButtonOptions, type CustomImmersiveLayout, ExternalMessages, type MenuItem, type PluginAPI, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
+export { CARPreset, COCPreset, type ComponentNames, type CustomButtonOptions, type CustomImmersiveLayout, ExternalMessages, type MenuItem, type PluginAPI, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
