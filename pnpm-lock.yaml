@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@types/musickit':
         specifier: ciderapp/musickit-types
-        version: https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df
+        version: git+https://git@github.com:ciderapp/musickit-types.git#2600a2c345cc30a9f94f69d85cc1e9a7430bb466
     devDependencies:
       '@types/lodash':
         specifier: ^4.17.9
@@ -883,8 +883,8 @@ packages:
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
 
-  '@types/musickit@https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df':
-    resolution: {tarball: https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df}
+  '@types/musickit@git+https://git@github.com:ciderapp/musickit-types.git#2600a2c345cc30a9f94f69d85cc1e9a7430bb466':
+    resolution: {commit: 2600a2c345cc30a9f94f69d85cc1e9a7430bb466, repo: git@github.com:ciderapp/musickit-types.git, type: git}
     version: 1.0.0
 
   '@types/node@22.7.4':
@@ -1244,8 +1244,8 @@ packages:
   core-js-compat@3.38.1:
     resolution: {integrity: sha512-JRH6gfXxGmrzF3tZ57lFx97YARxCXPaMzPo6jELZhv88pBH5VXpQ+y0znKGlFnzuaihqhLbefxSJxWJMPtfDzw==}
 
-  cross-spawn@7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
+  cross-spawn@7.0.6:
+    resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
 
   css-declaration-sorter@7.2.0:
@@ -3258,7 +3258,7 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.11
 
-  '@types/musickit@https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df': {}
+  '@types/musickit@git+https://git@github.com:ciderapp/musickit-types.git#2600a2c345cc30a9f94f69d85cc1e9a7430bb466': {}
 
   '@types/node@22.7.4':
     dependencies:
@@ -3721,7 +3721,7 @@ snapshots:
     dependencies:
       browserslist: 4.24.0
 
-  cross-spawn@7.0.3:
+  cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
       shebang-command: 2.0.0
@@ -4024,7 +4024,7 @@ snapshots:
       '@types/json-schema': 7.0.15
       ajv: 6.12.6
       chalk: 4.1.2
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       debug: 4.3.7
       escape-string-regexp: 4.0.0
       eslint-scope: 8.1.0
@@ -4078,7 +4078,7 @@ snapshots:
 
   execa@8.0.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 8.0.1
       human-signals: 5.0.0
       is-stream: 3.0.0
@@ -4143,7 +4143,7 @@ snapshots:
 
   foreground-child@3.3.0:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       signal-exit: 4.1.0
 
   fraction.js@4.3.7: {}
