@@ -12,6 +12,10 @@ function useCider() {
   return window.CiderApp;
 }
 
+function isViteDev() {
+  return typeof window.__VUE_HMR_RUNTIME__ == "object";
+}
+
 function definePluginContext(options) {
   const useCPlugin = () => {
     return options;
@@ -45,11 +49,20 @@ function definePluginContext(options) {
     const $router = useRouter();
     return await $router.push(`${routeBase}${page}`);
   }
+  function getBundledAssetURL(path) {
+    const _path = path.replace(/^\//, "");
+    const IZ_PORT = window.location.port;
+    if (isViteDev()) {
+      return `http://localhost:3058/${_path}`;
+    }
+    return `http://localhost:${IZ_PORT}/plugins/${options.identifier}/${_path}`;
+  }
   const exports = {
     customElementName,
     goToPage,
     useCPlugin,
     setupConfig,
+    getBundledAssetURL,
     plugin: options
   };
   return exports;

@@ -22,6 +22,7 @@ declare function definePluginContext(options: PluginAPI): {
     }) => Promise<any>;
     useCPlugin: () => PluginAPI;
     setupConfig: <T extends Record<string, any>>(defaults: T) => Ref<T>;
+    getBundledAssetURL: (path: string) => string;
     plugin: PluginAPI;
 };
 

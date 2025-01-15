@@ -3,6 +3,7 @@ import { PluginAPI } from "./PluginAPI";
 import { useCider, useRouter } from "./Std";
 import { ref, watch } from "vue";
 import type { Ref } from "vue";
+import { isViteDev } from "../utils";
 
 
 export function definePluginContext(options: PluginAPI) {
@@ -53,11 +54,26 @@ export function definePluginContext(options: PluginAPI) {
         return await $router.push(`${routeBase}${page}`)
     }
 
+    /**
+     * Returns the URL of a bundled asset from the Vite public/ directory.
+     * @param path
+     */
+    function getBundledAssetURL(path: string) {
+        const _path = path.replace(/^\//, '')
+        const IZ_PORT = window.location.port;
+        if (isViteDev()) {
+            return `http://localhost:3058/${_path}`
+        }
+        return `http://localhost:${IZ_PORT}/plugins/${options.identifier}/${_path}`
+    }
+
+
     const exports = {
         customElementName,
         goToPage,
         useCPlugin,
         setupConfig,
+        getBundledAssetURL,
         plugin: options,
     }
 
