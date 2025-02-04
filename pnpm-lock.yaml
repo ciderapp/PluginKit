@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@types/musickit':
-        specifier: ciderapp/musickit-types
-        version: https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df
+        specifier: github:ciderapp/musickit-types
+        version: https://codeload.github.com/ciderapp/musickit-types/tar.gz/2ac124bfac698fd8af1ea00ea65490ce0cdf8354
     devDependencies:
       '@types/lodash':
         specifier: ^4.17.9
@@ -883,8 +883,8 @@ packages:
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
 
-  '@types/musickit@https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df':
-    resolution: {tarball: https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df}
+  '@types/musickit@https://codeload.github.com/ciderapp/musickit-types/tar.gz/2ac124bfac698fd8af1ea00ea65490ce0cdf8354':
+    resolution: {tarball: https://codeload.github.com/ciderapp/musickit-types/tar.gz/2ac124bfac698fd8af1ea00ea65490ce0cdf8354}
     version: 1.0.0
 
   '@types/node@22.7.4':
@@ -3258,7 +3258,7 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.11
 
-  '@types/musickit@https://codeload.github.com/ciderapp/musickit-types/tar.gz/86ceb915ea55ce61ebd7bb3e36685a68c908a5df': {}
+  '@types/musickit@https://codeload.github.com/ciderapp/musickit-types/tar.gz/2ac124bfac698fd8af1ea00ea65490ce0cdf8354': {}
 
   '@types/node@22.7.4':
     dependencies:

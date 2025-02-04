@@ -39,7 +39,7 @@
     "test:types": "tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@types/musickit": "ciderapp/musickit-types"
+    "@types/musickit": "github:ciderapp/musickit-types"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.9",
