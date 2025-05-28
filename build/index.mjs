@@ -202,5 +202,6 @@ function useMusicKit() {
 const DialogAPI = window.__PLUGINSYS__.Dialog;
 
 const ContextMenuAPI = window.__PLUGINSYS__.ContextMenu;
+const useContextMenu = window.__PLUGINSYS__.Composables.useContextMenu;
 
-export { CARPreset, COCPreset, ContextMenuAPI, DialogAPI, ExternalMessages, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
+export { CARPreset, COCPreset, ContextMenuAPI, DialogAPI, ExternalMessages, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useContextMenu, useMessageListener, useMusicKit, useRouter };

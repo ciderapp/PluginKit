@@ -423,5 +423,15 @@ declare namespace Ctx {
 }
 
 declare const ContextMenuAPI: typeof Ctx;
+type UseContextMenuOptions = {
+    elementRef: Ref<HTMLElement | undefined>;
+};
+type UseContextMenu = (menu: Menu, opts?: UseContextMenuOptions) => {
+    elementRef: Ref<HTMLElement | undefined>;
+    setElementRef: (el: HTMLElement | undefined) => void;
+    showContextMenu: (event: MouseEvent | Event) => void;
+    menu: Menu;
+};
+declare const useContextMenu: UseContextMenu;
 
-export { CARPreset, COCPreset, type ComponentNames, ContextMenuAPI, type CustomButtonOptions, type CustomImmersiveLayout, DialogAPI, ExternalMessages, type MenuItem$1 as MenuItem, type PluginAPI, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
+export { CARPreset, COCPreset, type ComponentNames, ContextMenuAPI, type CustomButtonOptions, type CustomImmersiveLayout, DialogAPI, ExternalMessages, type MenuItem$1 as MenuItem, type PluginAPI, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useContextMenu, useMessageListener, useMusicKit, useRouter };
