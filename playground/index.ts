@@ -1,4 +1,4 @@
-import { definePluginContext } from "../build/index.mjs";
+import { definePluginContext, ContextMenuAPI } from "../build/index.mjs";
 import {mDNSDiscover} from '../build/mDNS'
 
 const services = await mDNSDiscover({

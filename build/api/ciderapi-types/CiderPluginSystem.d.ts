@@ -38,7 +38,7 @@ declare namespace __PLUGINSYS__ {
             addCustomButton(opts: import("../CustomButton").CustomButtonOptions): void
             removeCustomButton(opts: import("../CustomButton").CustomButtonOptions): void
             buttons: import("../CustomButton").CustomButtonOptions[]
-        }
+        },
     }
 
     const ExternalMessages: {

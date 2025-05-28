@@ -199,4 +199,8 @@ function useMusicKit() {
   return window.MusicKit.getInstance();
 }
 
-export { CARPreset, COCPreset, ExternalMessages, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
+const DialogAPI = window.__PLUGINSYS__.Dialog;
+
+const ContextMenuAPI = window.__PLUGINSYS__.ContextMenu;
+
+export { CARPreset, COCPreset, ContextMenuAPI, DialogAPI, ExternalMessages, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useMessageListener, useMusicKit, useRouter };
