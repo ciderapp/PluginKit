@@ -434,4 +434,17 @@ type UseContextMenu = (menu: Menu, opts?: UseContextMenuOptions) => {
 };
 declare const useContextMenu: UseContextMenu;
 
-export { CARPreset, COCPreset, type ComponentNames, ContextMenuAPI, type CustomButtonOptions, type CustomImmersiveLayout, DialogAPI, ExternalMessages, type MenuItem$1 as MenuItem, type PluginAPI, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useContextMenu, useMessageListener, useMusicKit, useRouter };
+interface v3Params {
+    queryParams?: MusicKit.QueryParameters;
+    total?: number;
+    totalHref?: string;
+    update?: (progress: number) => void;
+    verbose?: boolean;
+    apiType?: keyof MusicKit.v3;
+}
+declare function v3<T>(url: string, args?: MusicKit.QueryParameters | v3Params, opts?: MusicKit.QueryOptions & {
+    paramsInURL?: boolean;
+}, apiType?: keyof MusicKit.v3): Promise<MusicKit.QueryResponse<T>>;
+declare function v3Turbo<T>(route: string, args?: v3Params): Promise<T>;
+
+export { CARPreset, COCPreset, type ComponentNames, ContextMenuAPI, type CustomButtonOptions, type CustomImmersiveLayout, DialogAPI, ExternalMessages, type MenuItem$1 as MenuItem, type PluginAPI, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useContextMenu, useMessageListener, useMusicKit, useRouter, v3, v3Turbo };

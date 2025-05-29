@@ -204,4 +204,11 @@ const DialogAPI = window.__PLUGINSYS__.Dialog;
 const ContextMenuAPI = window.__PLUGINSYS__.ContextMenu;
 const useContextMenu = window.__PLUGINSYS__.Composables.useContextMenu;
 
-export { CARPreset, COCPreset, ContextMenuAPI, DialogAPI, ExternalMessages, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useContextMenu, useMessageListener, useMusicKit, useRouter };
+async function v3(url, args, opts, apiType = "music") {
+  return window.CiderApp.v3(url, args, opts, apiType);
+}
+async function v3Turbo(route, args) {
+  return window.CiderApp.v3Turbo(route, args);
+}
+
+export { CARPreset, COCPreset, ContextMenuAPI, DialogAPI, ExternalMessages, SpatialPreset, addCustomButton, addImmersiveLayout, addImmersiveMenuEntry, addMainMenuEntry, addMediaItemContextMenuEntry, createModal, definePluginContext, getURLParam, removeImmersiveLayout, removeImmersiveLayoutById, saveConfig, subscribeEvent, subscribeEventOnce, unsubscribeEvent, useCider, useCiderAudio, useContextMenu, useMessageListener, useMusicKit, useRouter, v3, v3Turbo };
