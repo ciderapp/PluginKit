@@ -1,4 +1,3 @@
-import { type Component } from "vue";
 
 export type DialogWindowStyle = 'generic' | 'none';
 
@@ -18,7 +17,7 @@ export type ConfirmOptions = {
 export type DialogProps = {
   seamless?: boolean;
   windowStyle?: DialogWindowStyle;
-  component: Component;
+  component: string;
   componentProps?: Record<string, any>;
   position?: DialogWindowPosition;
   windowClasses?: string | string[];
