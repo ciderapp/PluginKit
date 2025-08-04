@@ -61,7 +61,7 @@ export function definePluginContext(options: PluginAPI) {
     function getBundledAssetURL(path: string) {
         const _path = path.replace(/^\//, '')
         if (isViteDev()) {
-            return `http://${window.location.hostname}:3058/${_path}`
+            return `http://localhost:3058/${_path}`
         }
         return `${window.location.origin}/plugins/${options.identifier}/${_path}`
     }
