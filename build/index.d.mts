@@ -1,4 +1,4 @@
-import { Ref, Component } from 'vue';
+import { Ref } from 'vue';
 
 type PluginAPI = {
     setup(): void;
@@ -258,7 +258,7 @@ type ConfirmOptions = {
 type DialogProps = {
   seamless?: boolean;
   windowStyle?: DialogWindowStyle;
-  component: Component;
+  component: string;
   componentProps?: Record<string, any>;
   position?: DialogWindowPosition;
   windowClasses?: string | string[];
