@@ -1,8 +1,9 @@
 /**
- * MusicKit JS API
- *
- * Learn more at https://developer.apple.com/documentation/musickitjs
+ * @deprecated MusicKit no longer supported in Cider, use the AppleMusic controller instead
  */
 export function useMusicKit() {
-    return window.MusicKit.getInstance() as MusicKit.MusicKitInstance;
+  console.error(
+    "MusicKit no longer supported in Cider, use the AppleMusic controller instead",
+  );
+  return null;
 }
