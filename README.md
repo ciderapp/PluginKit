@@ -1,33 +1,71 @@
-# ciderapp/pluginkit
+# @ciderapp/pluginkit
 
-**Note** This repository is not for reporting issues for individual plugins, please report issues with plugins themselves to their respective authors.
+`@ciderapp/pluginkit` is the open source plugin API for Cider.
 
-Please use this repository to report bugs and feature requests for the Cider 2 Plugin API.
+It is the public bridge between a plugin and the closed source Cider frontend. The package does not reimplement Cider; it exposes the supported host APIs, Vue helpers, playback controls, context menu builders, dialog helpers, and plugin-scoped utilities that Cider provides at runtime.
 
-## Usage
+If you are building a plugin, start with [docs/API Documentation.md](docs/API%20Documentation.md).
 
-Import:
+## What it is
 
-**ESM** (Node.js, Bun)
+- Cider is the host application.
+- PluginKit is the supported API surface exposed to plugins.
+- The host injects runtime objects such as `window.__PLUGINSYS__`, `window.CiderApp`, and `window.CiderAudio`.
+- Most helpers in this package are thin wrappers around those host objects.
 
-```js
-import {} from "@ciderapp/pluginkit";
+## Quick Start
+
+```ts
+import {
+  definePluginContext,
+  AppleMusic,
+  addMainMenuEntry,
+  subscribeEvent,
+  useMessageListener,
+} from "@ciderapp/pluginkit";
+
+const plugin = definePluginContext({
+  setup() {},
+  name: "Example Plugin",
+  identifier: "example-plugin",
+  description: "Example plugin for Cider",
+  version: "1.0.0",
+  author: "You",
+  repo: "https://github.com/you/example-plugin",
+});
+
+AppleMusic.playPause();
+
+const removeMenuEntry = addMainMenuEntry({
+  label: "Example action",
+  onClick: () => console.log("Clicked"),
+});
+
+subscribeEvent("app:ready", () => {
+  console.log("Cider is ready");
+});
+
+useMessageListener("example:ping", (event) => {
+  console.log("Received", event);
+});
 ```
+
+## Documentation
+
+- [API reference](docs/API%20Documentation.md)
 
 ## Development
 
-<details>
+1. Install the latest LTS version of [Node.js](https://nodejs.org/en/).
+2. Enable [Corepack](https://github.com/nodejs/corepack) with `corepack enable`.
+3. Install dependencies with `pnpm install`.
+4. Run the local test and typecheck loop with `pnpm dev`.
 
-<summary>local development</summary>
+## Reporting issues
 
-- Clone this repository
-- Install latest LTS version of [Node.js](https://nodejs.org/en/)
-- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
-- Install dependencies using `pnpm install`
-- Run interactive tests using `pnpm dev`
-
-</details>
+- Use this repository for PluginKit bugs, missing APIs, and integration issues with Cider's plugin host.
+- Do not report plugin-specific bugs here; report those to the plugin author.
 
 ## License
 
-Published under the [MIT](https://github.com/unjs/packageName/blob/main/LICENSE) license.
+Published under the MIT license.

@@ -71,7 +71,7 @@ export function definePluginContext(options: PluginAPI) {
 
   const pluginDefinition = {
     ...options,
-    pluginKitVersion: 1,
+    pluginKitVersion: 4,
   };
 
   const exports = {
