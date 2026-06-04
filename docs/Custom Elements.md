@@ -2,11 +2,6 @@
 
 This guide documents every non-Quasar custom element currently registered by Cider and exposed to plugin templates.
 
-Source of truth:
-- Frontend registry: `packages/frontend/src/lib/Plugins/CiderComponents.ts`
-- Tag conversion rule: `packages/frontend/src/boot/custom-elements.ts` (`webComponentSafeName`)
-- PluginKit map: `src/api/ciderapi-types/vue-custom-elements.d.ts`
-
 ## How to use these components
 
 1. Use the tags directly in your Vue template, for example `<cider-media-item />`.
