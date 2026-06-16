@@ -5,3 +5,4 @@
 
 /// <reference path="CiderApp.d.ts" />
 /// <reference path="CiderPluginSystem.d.ts" />
+/// <reference path="vue-custom-elements.d.ts" />

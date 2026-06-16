@@ -94,6 +94,16 @@ interface ICiderApp {
      */
     router: any,
     /**
+     * Plugin navigation router adapter (pod-router compatible)
+     */
+    pluginRouter: {
+      push(to: string | { path: string; query?: Record<string, string | number | boolean> }, options?: {
+        openInNewTab?: boolean,
+        newTabToFront?: boolean,
+      }): void,
+      back(): void,
+    },
+    /**
      * Pinia store
      */
     store: any,

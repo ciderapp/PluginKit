@@ -1,0 +1,15 @@
+{
+  "name": "@types/cider-musickit",
+  "version": "1.0.0",
+  "description": "Typescript types for Cider's Usage of Apple's MusicKit",
+  "types": "./types/index.d.ts",
+  "author": "CiderCollective",
+  "license": "MIT",
+  "scripts": {
+    "lint": "tslint **/*.d.ts"
+  },
+  "devDependencies": {
+    "tslint": "^5.20.1",
+    "typescript": "^5.9.2"
+  }
+}

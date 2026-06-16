@@ -47,6 +47,29 @@ declare namespace __PLUGINSYS__ {
         dispatchEvent(event: string, data: any): void
     }
 
+    const Stores: {
+        appleMusicStore: {
+            player: {
+                playItemByID(id: string, trackData?: MusicKit.Resource | null): Promise<void>
+            } | null
+            audioElement: HTMLAudioElement
+            nowPlayingItem: MusicKit.MediaItem | null
+            shuffleMode: number
+            repeatMode: 'none' | 'one' | 'all'
+            isPlaying: boolean
+            play(): void | Promise<void>
+            pause(): void | Promise<void>
+            stop(): void | Promise<void>
+            playpause(): void | Promise<void>
+            skipToNext(): void | Promise<void>
+            skipToPrevious(): void | Promise<void>
+            setShuffleMode(enabled: boolean): void | Promise<void>
+            setRepeatMode(mode: 'none' | 'one' | 'all'): void | Promise<void>
+            playItemByHref(href: string): void | Promise<void>
+            ensurePlayer(): void | Promise<void>
+        }
+    }
+
     const Quasar: {
         Dialog: any;
     }

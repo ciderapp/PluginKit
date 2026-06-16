@@ -97,6 +97,16 @@ declare namespace CiderApp {
      */
     const router: import("vue-router").Router
     /**
+     * Plugin navigation router adapter (pod-router compatible)
+     */
+    const pluginRouter: {
+      push(to: string | { path: string; query?: Record<string, string | number | boolean> }, options?: {
+        openInNewTab?: boolean;
+        newTabToFront?: boolean;
+      }): void;
+      back(): void;
+    }
+    /**
      * Pinia store
      */
     const store: import("pinia").Pinia

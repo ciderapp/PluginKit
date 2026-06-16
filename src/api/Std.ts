@@ -1,7 +1,11 @@
 // @ts-nocheck
 
 export function useRouter() {
-    return useCider().router
+    const router = useCider().pluginRouter
+    if (!router) {
+        throw new Error('Plugin router bridge (pod-router) is unavailable on CiderApp.pluginRouter')
+    }
+    return router
 }
 
 export function getURLParam(name: string) {
